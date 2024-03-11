@@ -10,7 +10,7 @@ public class Login extends JFrame implements ActionListener {
 	JButton loginButton,clearButton,signUpButton;
 	JPasswordField pinTextField;
 	JTextField cardNoTextField ;
-	Login(){
+	public Login(){
 		//General Qs
 		setSize(800,479);
 		getContentPane().setBackground(Color.white);
