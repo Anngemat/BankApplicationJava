@@ -12,7 +12,7 @@ import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
 
 public class SignUpOne extends JFrame implements ActionListener {
-
+	Conn c = new Conn();
 	Random rand = new Random();
 	int randomNumber = rand.nextInt(10000) + 1000;
 	JTextField nameText ,surNameText, fatherNameText ,emailText, cityText, stateText ,pincodeText;
@@ -173,6 +173,8 @@ public class SignUpOne extends JFrame implements ActionListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		
 		String formno = "" +rand;
 		String name = nameText.getText();
 		String surname = surNameText.getText();
@@ -201,12 +203,16 @@ public class SignUpOne extends JFrame implements ActionListener {
 			if(name.equals("")) {
 				JOptionPane.showMessageDialog(null, "Name is required");
 			} else {
-				Conn c = new Conn();
+				
 				String query = "insert into signup values('" + formno+"', '"+name+"', '" +surname+"', '"  +fname+",' '" +dob+"', '" +gender+"', '" +email+"', '"+marital+"', '"+city+"', '"+state+"', '"+pin+"')";
 				c.s.executeUpdate(query);
 			}
 		} catch (Exception e2) {
-			System.out.println(e);
+			System.out.println(e2);
+		}
+		if (e.getSource() == nextButton) {
+			setVisible(false);
+			new SignUpTwo().setVisible(true);
 		}
 	}
 	

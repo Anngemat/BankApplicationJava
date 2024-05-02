@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: hsken
+Build-Jdk: 17.0.9
+Main-Class: com.toedter.calendar.demo.JCalendarDemo
+Created-By: Maven Integration for Eclipse
+
